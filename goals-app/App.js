@@ -32,7 +32,7 @@ export default function App() {
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
-            return <GoalItem itemData={itemData} />;
+            return <GoalItem itemData={itemData.item.text} />;
           }}
           keyExtractor={(item, index) => {
             return item.id;
