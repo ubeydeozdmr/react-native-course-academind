@@ -19,7 +19,7 @@ function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
         rounds to guess the number{' '}
         <Text style={styles.highlight}>{userNumber}</Text>.
       </Text>
-      <PrimaryButton>Start New Game</PrimaryButton>
+      <PrimaryButton onPress={onStartNewGame}>Start New Game</PrimaryButton>
     </View>
   );
 }
