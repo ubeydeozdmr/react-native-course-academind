@@ -9,7 +9,7 @@ function ExpenseForm() {
       <Input
         label="Amount"
         textInputConfig={{
-          KeyboardType: 'decimal-pad',
+          keyboardType: 'decimal-pad',
           onChangeText: amountChangeHandler,
         }}
       />
