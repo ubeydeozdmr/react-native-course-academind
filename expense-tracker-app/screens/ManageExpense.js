@@ -12,7 +12,6 @@ function ManageExpense({ route, navigation }) {
 
   const editedExpenseId = route.params?.expenseId;
   const isEditing = !!editedExpenseId;
-  ('');
 
   const selectedExpense = expensesCtx.expenses.find(
     (expense) => expense.id === editedExpenseId,
