@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Input from './Input';
 import Button from '../UI/Button';
@@ -22,13 +22,13 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
   }
 
   function submitHandler() {
-    const expensesData = {
+    const expenseData = {
       amount: +inputValues.amount,
       date: new Date(inputValues.date),
       description: inputValues.description,
     };
 
-    onSubmit(expensesData);
+    onSubmit(expenseData);
   }
 
   return (
@@ -40,7 +40,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
           label="Amount"
           textInputConfig={{
             keyboardType: 'decimal-pad',
-            onChangeText: inputChangedHandler.bind(null, 'amount'),
+            onChangeText: inputChangedHandler.bind(this, 'amount'),
             value: inputValues.amount,
           }}
         />
@@ -50,7 +50,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
           textInputConfig={{
             placeholder: 'YYYY-MM-DD',
             maxLength: 10,
-            onChangeText: inputChangedHandler.bind(null, 'date'),
+            onChangeText: inputChangedHandler.bind(this, 'date'),
             value: inputValues.date,
           }}
         />
@@ -61,7 +61,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
           multiline: true,
           // autocapitalize: 'none', // default is 'sentences'
           // autocorrect: false, // default is true
-          onChangeText: inputChangedHandler.bind(null, 'description'),
+          onChangeText: inputChangedHandler.bind(this, 'description'),
           value: inputValues.description,
         }}
       />
@@ -70,7 +70,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
           Cancel
         </Button>
         <Button style={styles.button} onPress={submitHandler}>
-          {submitButtonLabel ? 'Update' : 'Add'}
+          {submitButtonLabel}
         </Button>
       </View>
     </View>
