@@ -20,6 +20,16 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }) {
     });
   }
 
+  function submitHandler() {
+    const expensesData = {
+      amount: +inputValues.amount,
+      date: new Date(inputValues.date),
+      description: inputValues.description,
+    };
+
+    onSubmit(expensesData);
+  }
+
   return (
     <View style={styles.form}>
       <Text style={styles.title}>Your Expense</Text>
@@ -58,7 +68,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }) {
         <Button style={styles.button} mode="flat" onPress={onCancel}>
           Cancel
         </Button>
-        <Button style={styles.button} onPress={onSubmit}>
+        <Button style={styles.button} onPress={submitHandler}>
           {submitButtonLabel ? 'Update' : 'Add'}
         </Button>
       </View>
