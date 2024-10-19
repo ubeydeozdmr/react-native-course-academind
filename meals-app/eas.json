@@ -12,9 +12,13 @@
       "android": {
         "buildType": "apk"
       },
+      "ios": {
+        "simulator": true
+      },
       "distribution": "internal"
     },
     "production": {
+      "credentialsSource": "local",
       "autoIncrement": true
     }
   },
